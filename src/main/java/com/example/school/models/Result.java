@@ -18,7 +18,8 @@ public class Result {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    private String studentName;
+    private String firstName;
+    private String lastName;
     private String studentClass;
     private String term;
     private String teacher;
