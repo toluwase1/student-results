@@ -21,19 +21,3 @@ public interface SubjectRepository extends JpaRepository<Subject, Long> {
     List<Subject> findAllByStudentId(Long id);
 
 }
-//    Optional<Subject> findByIdAndName(Long id, String name);
-
-//getResultByStudentIdAndSubject(name)
-//getResultByStudentIdAndClass
-//getResultByStudentIdAndTerm
-
-/*
-List<Product> findAllByNameLikeAndCategoryInAndPriceBetweenAndManufacturingPlace_State(String name,
-                                             List<Category> categories,
-                                             Double bottom, Double top,
-                                             STATE state);
- */
-
-//RETRIEVE RESULTS WITH subjects
-// The application should as well allow the school to retrieve all the scores of all subjects of
-// any student, for any selected term, displaying the average score as well.

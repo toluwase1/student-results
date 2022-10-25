@@ -3,10 +3,13 @@ package com.example.school.services.serviceImpl;
 import com.example.school.exceptions.UserAlreadyExist;
 import com.example.school.models.CLASS;
 import com.example.school.models.Student;
+import com.example.school.models.Subject;
 import com.example.school.repositories.StudentRepository;
 import com.example.school.services.SchoolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class SchoolServiceImpl implements SchoolService {
@@ -23,6 +26,7 @@ public class SchoolServiceImpl implements SchoolService {
 
     }
 
+    //Creating students in the 4 classes A1,A2,B1,B2 respectively with unique Id and Names
     private void createClasses(CLASS studentClass) throws UserAlreadyExist {
         int i=1;
         Student st = studentRepository.findByStudentName("stud"+studentClass+i);
@@ -37,6 +41,10 @@ public class SchoolServiceImpl implements SchoolService {
             studentRepository.save(s);
             i++;
         }
+    }
+
+    public List<Student> findAllStudents() {
+        return  studentRepository.findAll();
     }
 
 }
