@@ -1,7 +1,7 @@
 package com.example.school.config;
 
 import com.example.school.repositories.StudentResultRepository;
-import com.example.school.services.StudentResultServiceImplementation;
+import com.example.school.services.serviceImpl.StudentResultServiceImplementation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 

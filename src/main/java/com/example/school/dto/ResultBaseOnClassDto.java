@@ -1,5 +1,6 @@
-package com.example.school.models;
+package com.example.school.dto;
 
+import com.example.school.models.Subject;
 import lombok.*;
 
 import javax.persistence.*;
@@ -8,19 +9,11 @@ import java.util.List;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity
 @Builder
-public class Result {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+public class ResultBaseOnClassDto {
     private String studentName;
     private String studentClass;
-    private String term;
     private LocalDateTime date;
-    @ManyToMany(cascade = {CascadeType.ALL})
     private List<Subject> subjects;
     private double resultAverage;
 }

@@ -19,8 +19,5 @@ public class School {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
-
     private String name;
-    private String email;
-    private String password;
 }

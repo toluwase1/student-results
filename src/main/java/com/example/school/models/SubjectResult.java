@@ -4,26 +4,23 @@ import com.example.school.enums.TERM;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
 @Builder
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-public class Subject {
+public class SubjectResult {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
-    private String subjectTitle;
-    private double totalScore;
-    private Long studentId;
-    private String studentClass;
+    private  Long id;
+    private String subjectName;
+    private String studentName;
     @Enumerated(EnumType.STRING)
     private TERM term;
-
-//    @ManyToMany
-//    private List<Result> result;
-
+    private String session;
+    private LocalDateTime date;
+    private double totalScore;
 }
