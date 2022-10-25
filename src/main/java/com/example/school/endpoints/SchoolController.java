@@ -20,7 +20,10 @@ public class SchoolController {
 
     @GetMapping("/createStudents")
     public  ResponseEntity<String> registerStudents() throws UserAlreadyExist {
-        schoolService.registerNewStudents();
+        if (schoolService.findAllStudents().size() < 1) {
+            schoolService.registerNewStudents();
+            return ResponseEntity.status(HttpStatus.OK).body("Your students has been created");
+        }
         return ResponseEntity.status(HttpStatus.OK).body("Students created successfully");
     }
 }
