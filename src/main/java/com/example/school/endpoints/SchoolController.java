@@ -1,12 +1,8 @@
 package com.example.school.endpoints;
 
 
-import com.example.school.dto.ResultDto;
-import com.example.school.exceptions.UserAlreadyExsist;
-import com.example.school.models.Result;
-import com.example.school.services.SchoolService;
+import com.example.school.exceptions.UserAlreadyExist;
 import com.example.school.services.serviceImpl.SchoolServiceImpl;
-import com.example.school.services.serviceImpl.StudentResultServiceImplementation;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +19,7 @@ public class SchoolController {
     private final SchoolServiceImpl schoolService;
 
     @GetMapping("/createStudents")
-    public  ResponseEntity<String> registerStudents() throws UserAlreadyExsist {
+    public  ResponseEntity<String> registerStudents() throws UserAlreadyExist {
         schoolService.registerNewStudents();
         return ResponseEntity.status(HttpStatus.OK).body("Students created successfully");
     }
