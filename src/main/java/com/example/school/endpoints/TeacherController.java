@@ -23,12 +23,6 @@ public class TeacherController {
 
     private final TeacherService teacherService;
 
-    @PostMapping("/record-score")
-    public ResponseEntity<String>recordStudentScoreByTeacher(@RequestBody RecordDto record) {
-        String rec = teacherService.recordStudentScore(record);
-        return ResponseEntity.status(HttpStatus.OK).body(rec);
-    }
-
     @PostMapping("/register-student-subject/{studentId}")
     public ResponseEntity<String>registerStudentSubjectsByTeacher(@PathVariable Long studentId) throws SubjectNotFoundException {
         String reg = teacherService.recordStudentSubjects(studentId);
@@ -47,12 +41,12 @@ public class TeacherController {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @GetMapping("/student-subject-result")
+    @PostMapping("/student-subject-result")
     public ResponseEntity<SubjectResult>teacherGetsStudentResultBySubject(@RequestBody SubjectResultDto subjectResultDto) {
         return ResponseEntity.status(HttpStatus.OK).body(teacherService.getStudentResultBySubject(subjectResultDto));
     }
 
-    @GetMapping("/student-result-by-class")
+    @PostMapping("/student-result-by-class")
     public ResponseEntity<ResultBaseOnClassDto>teacherGetsStudentResultByClass(@RequestBody ClassResultDto classResultDto) {
         return ResponseEntity.status(HttpStatus.OK).body(teacherService.getStudentResultByClass(classResultDto));
     }

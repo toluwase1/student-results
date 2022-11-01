@@ -23,7 +23,6 @@ public class SchoolServiceImpl implements SchoolService {
         createClasses(CLASS.A2);
         createClasses(CLASS.B1);
         createClasses(CLASS.B2);
-
     }
 
     //Creating students in the 4 classes A1,A2,B1,B2 respectively with unique Id and Names

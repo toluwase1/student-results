@@ -7,7 +7,6 @@ import com.example.school.models.Student;
 import com.example.school.models.SubjectResult;
 
 public interface TeacherService {
-    String recordStudentScore(RecordDto record);
     String recordStudentSubjects(Long studentId);
     String recordScoreForEachStudentSubject(RecordDto record) throws SubjectNotFoundException;
 

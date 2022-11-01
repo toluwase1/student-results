@@ -34,16 +34,7 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Autowired
     private StudentResultRepository resultRepository;
-    @Override
-    public String recordStudentScore(RecordDto record) {
-//        Subject subject = Subject.builder()
-//                .studentId(record.getStudentId())
-//                .subjectTitle(record.getSubjectTitle())
-//                .totalScore(record.getScore())
-//                .build();
-//        subjectRepository.save(subject);
-        return "Student score registered successfully";
-    }
+
 
     @Override
     public String recordStudentSubjects(Long studentId) {
